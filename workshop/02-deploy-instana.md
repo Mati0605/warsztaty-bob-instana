@@ -73,13 +73,13 @@ Zaloguj się do UI Instany pod adresem podanym przez prowadzącego.
 
 Przejdź do **Applications** w lewym menu. Poszukaj aplikacji `app-for-bob`.
 
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
 ### Krok 2: Widok Summary
 
 Kliknij na `app-for-bob` — domyślnie otwiera się zakładka **Summary**.
 
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 Na jednym ekranie widzisz wszystko co najważniejsze: liczbę wywołań na sekundę,
 procent błędnych requestów (erroneous call rate) i średnią latencję. Wykresy pokazują
@@ -94,11 +94,11 @@ Kliknij na `app-for-bob` → zakładka **Services** , a później **Endpoints**.
 Powinieneś zobaczyć listę endpointów (`/health`, `/products`, `/orders`, `/payments` itd.)
 wraz z liczbą wywołań, error rate i latency.
 
-![alt text](image.png)
+![alt text](img/image.png)
 
 Zakładka **Error messages** pokaże błędy HTTP 500 generowane przez aplikację.
 
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 
 ## Wynik ćwiczenia

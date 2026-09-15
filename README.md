@@ -56,34 +56,35 @@ i otwórz je w Bobie.
 
 Kliknij zielony przycisk **Code** → **Download ZIP** (prawy górny róg strony repozytorium).
 
-> *[screen — przycisk Code → Download ZIP na stronie GitHub]*
+![alt text](img/image-4.png)
 
 Rozpakuj pobrany plik ZIP w dowolnym miejscu na dysku.
 
 ### 2. Otwórz folder w Bobie
 
-Uruchom Boba. Na ekranie startowym kliknij **Open Folder** i wskaż rozpakowany folder
+Uruchom Boba. Na ekranie startowym kliknij **Open...** i wskaż rozpakowany folder
 repozytorium warsztatowego.
 
-> *[screen — ekran startowy Boba z przyciskiem Open Folder]*
+![alt text](img/image-3.png)
 
 ### 3. Zaakceptuj zaufanie do folderu
 
 Bob wyświetli okno z pytaniem czy ufasz zawartości tego folderu.
 Kliknij **Yes, I trust the authors** żeby kontynuować.
 
-> *[screen — okno "Do you trust the authors of the files in this folder?"]*
+![alt text](img/image.png)
+
+![alt text](img/image-1.png)
 
 ### 4. Zaloguj się do Boba
 
 Jeśli nie jesteś jeszcze zalogowany, Bob wyświetli monit z prośbą o zalogowanie.
-Kliknij przycisk **Sign in** i zaloguj się swoimi danymi IBM.
+Kliknij przycisk **Log in to Bob** znajdujący się po prawej stronie i zaloguj się swoimi danymi IBM.
 
-> *[screen — ekran logowania Boba z przyciskiem Sign in]*
 
 Po zalogowaniu Bob jest gotowy do pracy. Interfejs wygląda tak:
 
-> *[screen — Bob z otwartym repozytorium i widocznym drzewem plików]*
+![alt text](img/image-2.png)
 
 Po lewej stronie widzisz drzewo plików repozytorium — stąd możesz otwierać pliki
 konfiguracyjne. W środku znajduje się edytor, w którym Bob będzie wprowadzał zmiany
@@ -99,7 +100,7 @@ Wykonuj ćwiczenia po kolei. Każde zaczyna się tam, gdzie skończyło poprzedn
 
 | Krok | Ćwiczenie | Opis |
 |---|---|---|
-| 1 | [Lab 1: Deployment aplikacji](workshop/01-deploy-app.md) | Deploy aplikacji przez UI OCP + naprawa YAML-a z Bobem |
+| 1 | ➡️ [Lab 1: Deployment aplikacji](workshop/01-deploy-app.md) | Deploy aplikacji przez UI OCP + naprawa YAML-a z Bobem |
 | 2 | [Lab 2: Instana — agent i monitoring](workshop/02-deploy-instana.md) | Jak działa agent Instana + weryfikacja w UI |
 | 3 | [Lab 3: Monitoring przez Boba](workshop/03-monitoring-with-bob.md) | Pytanie Boba o stan appki na żywo z danych Instany |
 
@@ -131,15 +132,4 @@ Wykonuj ćwiczenia po kolei. Każde zaczyna się tam, gdzie skończyło poprzedn
         └── error-report.txt
 ```
 
-> Plik `workshop-deploy-plan.md` to wewnętrzny plan projektu — nie jest częścią warsztatów.
 
----
-
-## Notatki dla prowadzącego
-
-- Każdy uczestnik ma login `labuserNN` i namespace `labprojNN` (np. `labuser02` → `labproj02`).
-- Namespace'y należy utworzyć przed warsztatami: `oc new-project labproj02` itd.
-- Agent Instana jest już zainstalowany na klastrze — uczestnicy nie muszą go wdrażać.
-- Token API Instana powinien mieć uprawnienia **read-only** do metryk i zdarzeń.
-- Obraz aplikacji: `quay.io/paszkiewicz_pl/workshop-app:v8` — publiczny, bez pull secret.
-- Przed warsztatami podaj uczestnikom: adres repo, adres konsoli OCP, adres UI Instany, token API.
