@@ -52,13 +52,13 @@ tylko w tym trybie Bob może wykonywać komendy i wywoływać narzędzia MCP.
 Najpierw zapytaj Boba o instrukcję:
 
 ```
-Jak mogę połączyć Cię z Instaną przez MCP?
+Jak mogę połączyć Cię z Instaną przez MCP (lokalny serwer MCP)?
 ```
 
-Bob opisze dokładnie co jest potrzebne i jak przebiega konfiguracja. Po przeczytaniu opisu, podaj Bobowi swoje dane i poproś go o skonfigurowanie połączenia:
+Bob opisze dokładnie co jest potrzebne i jak przebiega konfiguracja. Po przeczytaniu opisu, podaj Bobowi swoje dane i poproś go o skonfigurowanie połączenia (podstaw zmienne):
 
 ```
-Skonfiguruj połączenie z Instaną przez MCP (lookalny serwer MCP). Mój URL instancji to: https://TWOJ_URL.instana.io, a token API to: TWOJ_TOKEN
+Skonfiguruj połączenie z Instaną przez MCP (lookalny serwer MCP). Mój URL instancji to: https://TWOJ_URL, a token API to: TWOJ_TOKEN
 ```
 
 Bob samodzielnie skonfiguruje plik MCP i załaduje serwer. W razie pytań poda je w trakcie konfiguracji.
@@ -75,15 +75,17 @@ Po zakończeniu konfiguracji zweryfikuj połączenie w panelu MCP:
 
 Jeśli kropka jest czerwona, sprawdź poprawność tokenu i adresu URL instancji i poproś Boba o ponowną konfigurację.
 
+![alt text](img/image5.png)
+
 ---
 
 ## Pytanie 1: Czy aplikacja jest zdrowa?
 
-Skopiuj poniższy prompt, podmień `TWOJ_NAMESPACE` na swój namespace i wyślij do Boba:
+
 
 ```
 Używając narzędzi MCP serwera Instana, sprawdź czy aplikacja workshop-app
-w namespace TWOJ_NAMESPACE jest teraz zdrowa. Sprawdź czy pod działa,
+w namespace labproj02 jest teraz zdrowa. Sprawdź czy pod działa,
 czy serwis odpowiada i czy nie ma aktywnych alertów. Odpowiedz po polsku
 jednym zdaniem podsumowania i listą kluczowych faktów.
 ```
@@ -103,11 +105,10 @@ Aplikacja workshop-app jest zdrowa.
 
 ## Pytanie 2: Jakie błędy wystąpiły w ostatniej godzinie?
 
-Podmień `TWOJ_NAMESPACE` na swój namespace i wyślij do Boba:
 
 ```
 Używając narzędzi MCP serwera Instana, pobierz wszystkie błędy i zdarzenia
-krytyczne z ostatniej godziny dla aplikacji workshop-app w namespace TWOJ_NAMESPACE.
+krytyczne z ostatniej godziny dla aplikacji workshop-app w namespace labproj02.
 Podsumuj po polsku: ile błędów wystąpiło, jakiego były typu i kiedy ostatni raz.
 ```
 
