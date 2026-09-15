@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: instana-agent-config
+  namespace: NAMESPACE  # <-- zamień na swój namespace, np. workshop-user01
+data:
+  configuration.yaml: |
+    # Instana agent configuration
+    # Dokumentacja: https://www.ibm.com/docs/en/instana-observability/current?topic=requirements-configuring-agent
+
+    com.instana.plugin.generic.hardware:
+      enabled: true
+
+    com.instana.plugin.kubernetes:
+      enabled: true
+
+    # Strefa identyfikuje Twój namespace w UI Instany
+    com.instana.agent.zone:
+      name: "NAMESPACE"  # <-- zamień na swój namespace
+
+    com.instana.agent.cluster: "workshop-ocp-cluster"

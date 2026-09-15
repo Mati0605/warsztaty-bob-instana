@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: instana-agent
+  namespace: NAMESPACE  # <-- zamień na swój namespace, np. workshop-user01
+  labels:
+    app: instana-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: instana-agent
+  template:
+    metadata:
+      labels:
+        app: instana-agent
+    spec:
+      serviceAccountName: default
+      containers:
+        - name: instana-agent
+          image: icr.io/instana/agent
+          env:
+            - name: INSTANA_AGENT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: instana-agent-secret
+                  key: key
+            - name: INSTANA_AGENT_HOST
+              value: "INSTANA_BACKEND_HOST"  # <-- wklej adres backendu od prowadzącego
+            - name: INSTANA_AGENT_PORT
+              value: "443"
+            - name: INSTANA_AGENT_ZONE
+              value: "NAMESPACE"  # <-- zamień na swój namespace
+            - name: INSTANA_KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          volumeMounts:
+            - name: config
+              mountPath: /root/configuration.yaml
+              subPath: configuration.yaml
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+      volumes:
+        - name: config
+          configMap:
+            name: instana-agent-config

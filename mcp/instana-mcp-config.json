@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "Instana MCP Server": {
+      "command": "mcp-instana",
+      "args": ["--transport", "stdio"],
+      "env": {
+        "INSTANA_BASE_URL": "https://INSTANA_BACKEND_HOST",
+        "INSTANA_API_TOKEN": "INSTANA_API_TOKEN"
+      }
+    }
+  }
+}

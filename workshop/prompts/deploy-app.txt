@@ -1,0 +1,1 @@
+Zaktualizuj app/deployment.yaml podstawiając NAMESPACE jako TWOJ_NAMESPACE, następnie wykonaj oc apply na app/deployment.yaml i app/service.yaml i potwierdź że pod jest w stanie Running i endpoint /health zwraca status 200.

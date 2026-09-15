@@ -1,0 +1,1 @@
+Używając narzędzi MCP serwera Instana, sprawdź czy aplikacja workshop-app w namespace TWOJ_NAMESPACE jest teraz zdrowa. Sprawdź czy pod działa, czy serwis odpowiada i czy nie ma aktywnych alertów. Odpowiedz po polsku jednym zdaniem podsumowania i listą kluczowych faktów.

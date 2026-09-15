@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workshop-app
+  namespace: NAMESPACE  # <-- zamień na swój namespace, np. labproj02
+  labels:
+    app: workshop-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: workshop-app
+  template:
+    metadata:
+      labels:
+        app: workshop-app
+    spec:
+      containers:
+        - name: workshop-app
+          image: quay.io/paszkiewicz_pl/workshop-app:v8
+          ports:
+          - containerPort: 8080
+          env:
+          - name: AUTOWRAPT_BOOTSTRAP
+            value: "instana"
+          - name: INSTANA_AGENT_HOST
+            value: "instana-agent.instana-agent.svc.cluster.local"
+          - name: INSTANA_AGENT_PORT
+            value: "42699"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 30
+          resources:
+          requests:
+            cpu: "50m"
+            memory: "64Mi"
+          limits:
+            cpu: "200m"
+            memory: "128Mi"

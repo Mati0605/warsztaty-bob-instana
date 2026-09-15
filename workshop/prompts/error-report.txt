@@ -1,0 +1,1 @@
+Używając narzędzi MCP serwera Instana, pobierz wszystkie błędy i zdarzenia krytyczne z ostatniej godziny dla aplikacji workshop-app w namespace TWOJ_NAMESPACE. Podsumuj po polsku: ile błędów wystąpiło, jakiego były typu i kiedy ostatni raz.
